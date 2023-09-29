@@ -4,6 +4,7 @@ import Views from "./Views";
 import Terminaciones from "../assets/imgs/Terminaciones.png";
 import Aberturas from "../assets/imgs/Aberturas.png";
 import Equipamiento from "../assets/imgs/Equipamiento.png";
+
 import Buttons from "./Buttons";
 import Toggle from "./Toggle";
 
@@ -24,14 +25,14 @@ const SideBar = () => {
 
   return (
     <div className="flex w-screen">
-      <aside className="bg-white w-32 flex flex-col items-center justify-center py-4">
+      <aside className="bg-white w-32 flex flex-col items-center justify-center gap-12">
         {items.map((item) => (
           <div
             key={item.name}
             onClick={() => handleItemClick(item.name)}
             className="flex flex-col items-center justify-center w-full cursor-pointer"
           >
-            <img src={item.src} alt={item.name} />
+            <img src={item.src} className="w-10" alt={item.name} />
             <p>{item.name}</p>
           </div>
         ))}

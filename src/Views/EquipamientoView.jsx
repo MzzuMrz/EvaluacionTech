@@ -11,21 +11,13 @@ const Views = () => {
   useEffect(() => {
     axios
       .get(URL)
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((err) => {
-        console.error("Hubo un problema", err);
-      });
+      .then((response) => setData(response.data))
+      .catch((err) => console.error("Hubo un problema", err));
   }, [URL]);
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
-
   return (
-    <div className="flex justify-between px-5 bg-white">
-      <div className="py-5">
+    <div className="flex justify-between p-5 bg-white">
+      <div className="py-5 space-y-5">
         {selectedCategory ? (
           <div
             className="flex gap-2 cursor-pointer"
@@ -37,9 +29,7 @@ const Views = () => {
             </button>
           </div>
         ) : null}
-        <h1 className="text-primary font-semibold text-2xl mb-5">
-          Equipamiento
-        </h1>
+        <h1 className="text-primary font-semibold text-2xl">Equipamiento</h1>
         {selectedCategory ? (
           <div className="grid grid-cols-3 gap-4">
             {selectedCategory.items.map((item) => (
@@ -60,11 +50,11 @@ const Views = () => {
           data.map((d) => (
             <div
               key={d.name}
-              className="flex justify-between bg-white rounded-md w-64 p-2 my-5 font-light cursor-pointer"
-              onClick={() => handleCategoryClick(d)}
+              className="flex justify-between bg-white rounded-md w-64 p-2 my-5 font-light cursor-pointer hover:bg-gray-100"
+              onClick={() => setSelectedCategory(d)}
             >
               <p>{d.name}</p>
-              <img src={Arrow} className="w-5 rotate-180" />
+              <img src={Arrow} className="w-5 transform rotate-180" />
             </div>
           ))
         ) : (
