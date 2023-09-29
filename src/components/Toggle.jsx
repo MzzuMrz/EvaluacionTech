@@ -3,7 +3,7 @@ import Arrow from "../assets/imgs/Arrow.png";
 
 const Toggle = ({ onClick }) => {
   return (
-    <div onClick={onClick} className="cursor-pointer translate-y-1/2">
+    <div onClick={onClick} className="cursor-pointer self-center">
       <img className="w-5 bg-white rounded-r-lg py-5" src={Arrow} alt="arrow" />
     </div>
   );

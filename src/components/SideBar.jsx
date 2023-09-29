@@ -40,9 +40,9 @@ const SideBar = () => {
       {showView && (
         <div className="flex flex-grow relative">
           <div className="flex flex-grow relative justify-between">
-            <div className="flex flex-grow relative ">
+            <div className="flex content-center ">
               <Views category={category} />
-              <Toggle onClick={() => setShowView(false)} />
+              <Toggle className="" onClick={() => setShowView(false)} />
             </div>
             <Buttons />
           </div>

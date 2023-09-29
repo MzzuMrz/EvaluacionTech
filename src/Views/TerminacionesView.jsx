@@ -31,7 +31,7 @@ const Views = () => {
         ) : null}
         <h1 className="text-primary font-semibold text-2xl">Terminaciones</h1>
         {selectedCategory ? (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {selectedCategory.items.map((item) => (
               <div
                 key={item.name}
